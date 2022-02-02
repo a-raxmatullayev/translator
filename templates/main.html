@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="{% static 'semantic_ui\semantic.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css\main.css' %}">
+  <title>Translate</title>
+</head>
+<body>
+  <div class="ui grey menu">
+    <div class="item">
+      <img src="{% static 'logo.png' %}">
+    </div>
+    <a class="item" href="{% url 'uzen' %}">O'zbekcha-Inlizcha</a>
+    <a class="item" href="{% url 'enuz' %}">Inglizcha-O'zbekcha</a>
+
+    <div class="item right">
+    <div class="ui button"><a href='/admin/'>Login</a></div>
+</div>
+  </div>
+
+
+
+    <div class="ui container" style="height: 80px" >
+      <div class="ui header segment celled large olive" align='center'>
+        <div class="inline" style="width: 80%">
+          <div class="ui form search">
+            <form method="get" action="" class="ui icon input " style="width: 100%">
+              <input name="word" value="{{word}}" type="text" placeholder="So'zni kiriting..." class="promt">
+              <i class="search link icon"></i>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br> <br><br>
+
+    {% block content %}
+
+
+    {% endblock content %}
+
+<script type="text/javascript" src="{% static 'semantic_ui\semantic.min.js' %}"></script>
+
+</body>
+</html>

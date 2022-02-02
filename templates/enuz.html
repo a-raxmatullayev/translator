@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="ui container" style="height: 80px" >
+          <div class="ui piled segment">
+            <h4 class="ui header">Natija</h4>
+            <table class="ui celled large olive table">
+              <thead>
+                <tbody style="text-align: center">
+                  <th><i class="ui gb uk flag"></i>Inglizcha</th>
+                  <th><i class="ui uz flag"></i>O'zbekcha</th>
+                </tbody>
+                {% if natija %}
+                {% for tarjima in natija %}
+                <tr>
+                  <td>{{tarjima.inglizcha}}</td>
+                  <td>{{tarjima.uzbekcha}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+              </thead>
+            </table>
+          </div>
+
+    </div>
+{% endblock content %}
+
+</body>
+</html>
